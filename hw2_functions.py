@@ -4,7 +4,7 @@
 # FILL THESE COMMENTS IN
 #*****************************************
 # YOUR NAME: AMMA AGYEI
-# NUMBER OF HOURS TO COMPLETE: 2hrs 30mins  (please track how long this homework takes you to complete).
+# NUMBER OF HOURS TO COMPLETE: 4hrs 30mins  (please track how long this homework takes you to complete).
 # YOUR COLLABORATION STATEMENT(s) (refer to syllabus):
 # I worked on this assignment alone.
 #*****************************************
@@ -27,17 +27,21 @@ def intersectionoftwolines_x(m1, b1, m2, b2):
     # Calculate x for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-
-    x = (b2 - b1) / (m1 - m2) #replace this with your calculation for x
-    return x
+    if m1 - m2 == 0:  #if m1 - m2 = 0 then, the lines are parallel.'
+        return 'lines are parallel'
+    else:
+        x = (b2 - b1) / (m1 - m2) #replace this with your calculation for x
+        return x
 
 def intersectionoftwolines_y(m1, b1, m2, b2):
     # Calculate y for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-
-    y = m1 * ((b2 - b1)/ (m1 - m2)) + b1 #replace this with your calculation for y
-    return y
+    if m1 == m2:
+        return 'lines are parallel'
+    else:
+        y = m1 * ((b2 - b1)/ (m1 - m2)) + b1 #replace this with your calculation for y
+        return y
 
 
 def distancebetweenpoints(x1, y1, x2, y2):
@@ -47,6 +51,7 @@ def distancebetweenpoints(x1, y1, x2, y2):
 
     distance = math.sqrt(((x2 - x1)**2)+ ((y2 - y1)**2)) # replace with your calculation for distance
     return distance
+
 
 def heronsformula(a, b, c):
     # Calculate the area of a triangle with three known side lengths.
@@ -64,12 +69,16 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     x1 = (b2 - b1) / (m1 - m2)
     x2 = (b3 - b2) / (m2 - m3)
     x3 = (b3 - b1) / (m1 - m3)
+
     y1 = m1 * ((b2 - b1) / (m1 - m2)) + b1
     y2 = m2 * ((b3 - b2) / (m2 - m3)) + b2
     y3 = m3 * ((b3 - b1) / (m1 - m3)) + b3
+
+
     a = math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2))
     b = math.sqrt(((x3 - x2)**2) + ((y3 - y2)**2))
     c = math.sqrt(((x3 - x1)**2) + ((y3 - y1)**2))
+
     s = ((a + b + c) / 2 )
 
 
@@ -92,6 +101,8 @@ print(round(intersectionoftwolines_x(3, -3, 2.3, 4),2) == 10)
 print(round(intersectionoftwolines_y(3, -3, 2.3, 4),2) == 27)
 print(round(intersectionoftwolines_x(10, 10, 30, 0),2) == .5)
 print(round(intersectionoftwolines_y(10, 10, 30, 0),2) == 15)
+print(intersectionoftwolines_x(2,  1,  2,  4)) #example of a parallel line to check if statement.
+print(intersectionoftwolines_y(3,  4,  3,  9)) #example of a parallel line to check if statement
 print("*********")
 
 print("Heron's Formula:")
