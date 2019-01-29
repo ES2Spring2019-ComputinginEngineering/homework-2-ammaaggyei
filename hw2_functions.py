@@ -27,7 +27,7 @@ def intersectionoftwolines_x(m1, b1, m2, b2):
     # Calculate x for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-    if m1 - m2 == 0:  #if m1 - m2 = 0 then, the lines are parallel.'
+    if m1 - m2 == 0:  #if m1 - m2 = 0 then, the lines are parallel.
         return 'lines are parallel'
     else:
         x = (b2 - b1) / (m1 - m2) #replace this with your calculation for x
