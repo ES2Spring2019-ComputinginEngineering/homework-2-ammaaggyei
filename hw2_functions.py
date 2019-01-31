@@ -28,7 +28,8 @@ def intersectionoftwolines_x(m1, b1, m2, b2):
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
     if m1 - m2 == 0:  #if m1 - m2 = 0 then, the lines are parallel.
-        return 'lines are parallel'
+        print('lines are parallel')
+        return 'Error'
     else:
         x = (b2 - b1) / (m1 - m2) #replace this with your calculation for x
         return x
@@ -38,7 +39,8 @@ def intersectionoftwolines_y(m1, b1, m2, b2):
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
     if m1 == m2:
-        return 'lines are parallel'
+        print('lines are parallel')
+        return 'Error'
     else:
         y = m1 * ((b2 - b1)/ (m1 - m2)) + b1 #replace this with your calculation for y
         return y
